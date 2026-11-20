@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Practical support for stronger training and compliance systems.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
