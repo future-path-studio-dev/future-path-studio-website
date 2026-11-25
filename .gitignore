@@ -156,3 +156,8 @@ vite.config.ts.timestamp-*
 .nx/workspace-data
 .nx/migrate-runs
 .DS_Store
+
+# Playwright generated files
+/test-results/
+/playwright-report/
+/playwright/.cache/
