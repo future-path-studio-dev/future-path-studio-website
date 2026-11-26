@@ -116,12 +116,18 @@ export default function ServiceDetail({ service }: { service: Service }) {
             ))}
           </ul>
 
+          {/* Temporary: routes to the contact form until Services & Booking
+              (Figma 469:953) is implemented. */}
           <Link
             href="/contact"
+            aria-describedby="consultation-note"
             className="mt-2 flex w-full items-center justify-center rounded-lg bg-brand-primary py-[13px] text-sm/[normal] font-bold text-white hover:bg-brand-hover"
           >
             Request a Consultation
           </Link>
+          <p id="consultation-note" className="mt-2 w-full text-center text-xs/[18px] text-muted">
+            Opens our contact form to send an enquiry. This is not a confirmed booking.
+          </p>
           <Link
             href="/services"
             className="mt-3 flex w-full items-center justify-center rounded-lg border border-border bg-surface py-[13px] text-sm/[normal] font-semibold whitespace-pre text-muted hover:border-brand-primary hover:text-brand-primary"

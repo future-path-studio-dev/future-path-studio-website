@@ -208,31 +208,38 @@ export const howItWorksSteps = [
 
 // Questions are from Figma 471:1063. Figma only shows the closed state for
 // these items, so the answers below are DRAFT copy pending client approval.
+// Set `approved: true` per answer once the client signs it off; the UI shows a
+// "Draft answer" label for every unapproved answer.
 export const servicesFaqs = [
   {
     question: "Which service is right for my organisation?",
     answer:
       "It depends on where your organisation is and what you need to achieve. Contact us with a short overview and we will recommend the most suitable support.",
+    approved: false,
   },
   {
     question: "Do you work with new and emerging RTOs?",
     answer:
       "Yes. We support new and emerging providers as they build compliant systems, documentation and delivery practices.",
+    approved: false,
   },
   {
     question: "Can you support TAS development and assessment review?",
     answer:
       "Yes. We develop contextualised Training and Assessment Strategies and review assessment tools for consistency, evidence quality and mapping gaps.",
+    approved: false,
   },
   {
     question: "Can we engage you for ongoing support?",
     answer:
       "Yes. Support can be arranged as a single project or as ongoing compliance and capability support, depending on your needs.",
+    approved: false,
   },
   {
     question: "Is our organisation's information kept confidential?",
     answer:
       "Yes. Information you share with us is used only to provide the support you have requested and is handled confidentially.",
+    approved: false,
   },
 ] as const;
 

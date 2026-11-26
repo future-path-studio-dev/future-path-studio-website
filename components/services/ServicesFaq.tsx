@@ -55,7 +55,12 @@ export default function ServicesFaq() {
                   hidden={!open}
                   className="-mt-1.5 pb-[18px] text-[15px]/6 text-muted"
                 >
-                  {faq.answer}
+                  <p>{faq.answer}</p>
+                  {!faq.approved && (
+                    <p className="mt-2 text-xs/[18px] font-semibold tracking-[0.6px] text-warning uppercase">
+                      Draft answer – pending client approval
+                    </p>
+                  )}
                 </div>
               </div>
             );

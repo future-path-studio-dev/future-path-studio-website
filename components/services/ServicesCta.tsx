@@ -8,7 +8,11 @@ export default function ServicesCta() {
       className="bg-brand-primary py-[70px] [--fps-focus-color:var(--fps-color-brand-accent)]"
     >
       <div className="fps-container flex flex-col items-center gap-4 text-center">
-        <h2 id="services-cta-heading" className="text-[32px]/[normal] font-bold text-white">
+        {/* Left-aligned full-width heading matches Figma 471:1119. */}
+        <h2
+          id="services-cta-heading"
+          className="w-full text-left text-[32px]/[normal] font-bold text-white"
+        >
           Not sure which support your organisation needs?
         </h2>
         <p className="text-lg/[normal] text-[#b8cdd9]">
