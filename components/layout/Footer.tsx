@@ -1,51 +1,46 @@
 import Link from "next/link";
+import BrandMark from "./BrandMark";
+import { publicNavigation } from "./navigation";
 
-const footerLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Resources", href: "/resources" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
-];
-
-export default async function Footer() {
-  "use cache";
-
+export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 bg-zinc-950 text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-2">
-        <div>
-          <h2 className="text-xl font-bold">The Future Path Studio</h2>
-
-          <p className="mt-4 max-w-md text-sm leading-7 text-zinc-400">
-            Practical support for stronger training and compliance systems.
+    <footer className="bg-brand-dark text-white [--fps-focus-color:var(--fps-color-brand-accent)]">
+      <div className="mx-auto grid max-w-[1440px] gap-2.5 px-5 py-7 min-[900px]:min-h-[250px] min-[900px]:grid-cols-[380fr_520fr_256fr] min-[900px]:gap-[min(4.861vw,70px)] min-[900px]:px-[5%] min-[900px]:py-[58px] min-[1440px]:px-[72px]">
+        <div className="flex flex-col items-start gap-2.5 min-[900px]:h-[52px] min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-3">
+          <BrandMark className="size-8 min-[900px]:size-12" />
+          <p className="text-[11px]/[normal] font-bold uppercase min-[900px]:text-[13px]/[18px]">
+            The Future Path Studio
           </p>
         </div>
 
-        <div>
-          <h3 className="font-semibold">Quick Links</h3>
-
-          <nav
-            aria-label="Footer navigation"
-            className="mt-4 grid grid-cols-2 gap-3"
-          >
-            {footerLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-zinc-400 transition hover:text-white"
+        <nav aria-label="Footer navigation">
+          <h2 className="sr-only text-[13px]/[18px] font-semibold text-brand-accent uppercase min-[900px]:not-sr-only min-[900px]:mb-[22px]">
+            Quick Links
+          </h2>
+          <ul className="grid grid-cols-4 gap-3.5 text-[13px]/[normal] text-[#c9d6e2] min-[900px]:flex min-[900px]:flex-wrap min-[900px]:gap-x-3 min-[900px]:gap-y-2 min-[900px]:text-sm/[normal] min-[900px]:text-white">
+            {publicNavigation.map(({ label, href }) => (
+              <li
+                key={href}
+                className={
+                  href === "/services" || href === "/resources"
+                    ? "hidden min-[900px]:block"
+                    : undefined
+                }
               >
-                {item.label}
-              </Link>
+                <Link href={href} className="inline-block underline-offset-4 hover:underline">
+                  {label}
+                </Link>
+              </li>
             ))}
-          </nav>
-        </div>
-      </div>
+          </ul>
+        </nav>
 
-      <div className="border-t border-zinc-800 px-6 py-5 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} The Future Path Studio. All rights
-        reserved.
+        <div className="flex flex-col gap-2.5 text-xs/[normal] text-[#9bb0c4] min-[900px]:gap-[22px] min-[900px]:text-sm/[22px] min-[900px]:text-white">
+          <p>© The Future Path Studio</p>
+          <p className="whitespace-pre-wrap">
+            {"Privacy Policy  •  Terms"}
+          </p>
+        </div>
       </div>
     </footer>
   );
