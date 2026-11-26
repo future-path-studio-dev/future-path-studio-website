@@ -1,8 +1,16 @@
 // Content source: Figma file lagZ6ViqHTzVpszZMTW9u4, "Homepage – Desktop 1440" 2:8.
-// The Hero (83:2) and Benefit Strip (2:11) belong to W1.2 (issue #5) and are not
-// defined here.
+// The Hero (83:2) and Benefit Strip (2:11) were assigned to W1.2 (issue #5) and
+// are implemented here with the project lead's authorisation.
 
 import { getService, type Service } from "@/features/services/services";
+
+// Figma 2:11.
+export const homeBenefits = [
+  "Practical Guidance",
+  "Contextualised Solutions",
+  "Learner-Centred Approach",
+  "Continuous Improvement",
+] as const;
 
 // Figma 4:38. The homepage uses its own card order and, for two services, a
 // slightly different summary from the Services overview, so both are kept here.
