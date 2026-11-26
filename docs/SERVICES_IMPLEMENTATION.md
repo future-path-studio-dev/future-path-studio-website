@@ -22,7 +22,8 @@ All content lives in `features/services/services.ts`. The detail pages share `co
 ## Approved design decisions
 
 - Long service titles wrap. Figma clips them on four detail frames.
-- The final CTA heading is left-aligned and full width, as in Figma `471:1119`.
+- The final CTA content (heading, description and button) is centred, with balanced heading wrapping. This intentionally differs from Figma `471:1119`, where the heading is left-aligned.
+- The final CTA and the shared footer use compact vertical padding (CTA 48px mobile / 56px desktop, footer 40px desktop) instead of Figma's 70px CTA padding and 250px minimum footer height.
 - "Request a Consultation" links to `/contact` until Services & Booking (`469:953`) is built. A note under the button says it opens a contact enquiry, not a confirmed booking.
 
 ## Pending client approval

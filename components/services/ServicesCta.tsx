@@ -5,17 +5,16 @@ export default function ServicesCta() {
   return (
     <section
       aria-labelledby="services-cta-heading"
-      className="bg-brand-primary py-[70px] [--fps-focus-color:var(--fps-color-brand-accent)]"
+      className="bg-brand-primary py-12 min-[900px]:py-14 [--fps-focus-color:var(--fps-color-brand-accent)]"
     >
       <div className="fps-container flex flex-col items-center gap-4 text-center">
-        {/* Left-aligned full-width heading matches Figma 471:1119. */}
         <h2
           id="services-cta-heading"
-          className="w-full text-left text-[32px]/[normal] font-bold text-white"
+          className="max-w-[880px] text-[32px]/[normal] font-bold text-balance text-white"
         >
           Not sure which support your organisation needs?
         </h2>
-        <p className="text-lg/[normal] text-[#b8cdd9]">
+        <p className="max-w-[640px] text-lg/[normal] text-[#b8cdd9]">
           Talk to The Future Path Studio about the support your organisation needs.
         </p>
         <Link
