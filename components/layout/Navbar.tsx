@@ -76,7 +76,8 @@ export default function Navbar() {
               href={item.href}
               onNavigate={closeMenu}
               aria-current={pathname === item.href ? "page" : undefined}
-              className="flex min-h-11 shrink-0 items-center rounded py-2 text-base leading-6 font-medium hover:text-brand-secondary focus-visible:-outline-offset-2 aria-[current=page]:font-semibold aria-[current=page]:text-brand-secondary min-[900px]:min-h-0 min-[900px]:py-0 min-[900px]:focus-visible:outline-offset-3"
+              className="flex min-h-11 shrink-0 items-center rounded py-2 text-base leading-6 font-medium hover:text-brand-secondary focus-visible:-outline-offset-2 data-[highlighted]:font-semibold data-[highlighted]:text-brand-secondary min-[900px]:min-h-0 min-[900px]:py-0 min-[900px]:focus-visible:outline-offset-3"
+              data-highlighted={item.href !== "/" && pathname === item.href ? "" : undefined}
             >
               {item.label}
             </Link>

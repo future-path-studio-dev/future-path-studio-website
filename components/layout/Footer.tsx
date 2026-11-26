@@ -37,7 +37,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2.5 text-xs/[normal] text-[#9bb0c4] min-[900px]:gap-[22px] min-[900px]:text-sm/[22px] min-[900px]:text-white">
           <p>© The Future Path Studio</p>
-          <p className="whitespace-pre-wrap">
+          <p className="hidden whitespace-pre-wrap min-[900px]:block">
             {"Privacy Policy  •  Terms"}
           </p>
         </div>
