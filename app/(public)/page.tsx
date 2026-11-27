@@ -1,13 +1,22 @@
+import HomeAbout from "@/components/home/HomeAbout";
+import HomeBenefits from "@/components/home/HomeBenefits";
+import HomeCta from "@/components/home/HomeCta";
+import HomeHero from "@/components/home/HomeHero";
+import HomeHowWeWork from "@/components/home/HomeHowWeWork";
+import HomeServices from "@/components/home/HomeServices";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
+
+// Figma "Homepage – Desktop 1440" 2:8.
 export default function HomePage() {
   return (
-    <main className="min-h-screen p-8">
-      <h1 className="text-3xl font-bold">
-        The Future Path Studio
-      </h1>
-
-      <p className="mt-4 text-gray-600">
-        Website development is in progress.
-      </p>
+    <main>
+      <HomeHero />
+      <HomeBenefits />
+      <HomeServices />
+      <HomeAbout />
+      <HomeHowWeWork />
+      <HomeTestimonials />
+      <HomeCta />
     </main>
   );
 }
