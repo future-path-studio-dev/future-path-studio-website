@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --fps-color-background: #f7f9fb;
+  --fps-color-surface: #ffffff;
+  --fps-color-alternate: #eef3f6;
+  --fps-color-border: #d0d5dd;
+  --fps-color-foreground: #1f2937;
+  --fps-color-muted: #667085;
+  --fps-color-brand-primary: #244a68;
+  --fps-color-brand-hover: #17324d;
+  --fps-color-brand-dark: #0f2438;
+  --fps-color-brand-secondary: #2f7d7a;
+  --fps-color-brand-accent: #d7a84a;
+  --fps-color-success: #2e7d32;
+  --fps-color-error: #c62828;
+  --fps-color-warning: #b26a00;
+  --fps-color-info: #2563eb;
+  --fps-focus-color: var(--fps-color-brand-primary);
+  --fps-radius-small: 0.25rem;
+  --fps-radius-medium: 0.5rem;
+  --fps-radius-large: 0.75rem;
+  --fps-spacing-unit: 0.25rem;
+  --fps-content-width: 77.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--fps-color-background);
+  --color-surface: var(--fps-color-surface);
+  --color-alternate: var(--fps-color-alternate);
+  --color-border: var(--fps-color-border);
+  --color-foreground: var(--fps-color-foreground);
+  --color-muted: var(--fps-color-muted);
+  --color-brand-primary: var(--fps-color-brand-primary);
+  --color-brand-hover: var(--fps-color-brand-hover);
+  --color-brand-dark: var(--fps-color-brand-dark);
+  --color-brand-secondary: var(--fps-color-brand-secondary);
+  --color-brand-accent: var(--fps-color-brand-accent);
+  --color-success: var(--fps-color-success);
+  --color-error: var(--fps-color-error);
+  --color-warning: var(--fps-color-warning);
+  --color-info: var(--fps-color-info);
+  --font-sans: var(--font-inter), Arial, sans-serif;
+  --radius-fps-small: var(--fps-radius-small);
+  --radius-fps-medium: var(--fps-radius-medium);
+  --radius-fps-large: var(--fps-radius-large);
+  --spacing: var(--fps-spacing-unit);
+  --container-fps: var(--fps-content-width);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background: var(--fps-color-background);
+    color: var(--fps-color-foreground);
+    font-family: var(--font-inter), Arial, sans-serif;
+  }
+
+  :is(a, button):focus-visible {
+    outline: 2px solid var(--fps-focus-color);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .fps-container {
+    width: min(calc(100% - 2.5rem), var(--fps-content-width));
+    margin-inline: auto;
+  }
+
+  .fps-heading-1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    font-weight: 700;
+  }
+
+  .fps-heading-2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: 700;
+  }
+
+  .fps-heading-3 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+  }
+
+  .fps-heading-4 {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    font-weight: 600;
+  }
+
+  .fps-body-large {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .fps-body-regular {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .fps-body-small {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+
+  :is(.fps-button-primary, .fps-button-secondary, .fps-button-accent) {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: var(--fps-radius-medium);
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .fps-button-primary {
+    background: var(--fps-color-brand-primary);
+    color: var(--fps-color-surface);
+  }
+
+  .fps-button-primary:hover:not(:disabled) {
+    background: var(--fps-color-brand-hover);
+  }
+
+  .fps-button-primary:active:not(:disabled) {
+    background: var(--fps-color-brand-dark);
+  }
+
+  .fps-button-secondary {
+    background: var(--fps-color-surface);
+    border-color: var(--fps-color-brand-primary);
+    color: var(--fps-color-brand-primary);
+    font-size: 0.875rem;
+  }
+
+  .fps-button-accent {
+    background: var(--fps-color-brand-accent);
+    color: var(--fps-color-brand-dark);
+  }
+
+  :is(.fps-button-primary, .fps-button-secondary, .fps-button-accent):disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .fps-link {
+    color: var(--fps-color-brand-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .fps-link:is(:hover, :focus-visible) {
+    text-decoration: underline;
+  }
+
+  .fps-card {
+    padding: 1.5rem;
+    border: 1px solid var(--fps-color-border);
+    border-radius: var(--fps-radius-medium);
+    background: var(--fps-color-surface);
+  }
 }
