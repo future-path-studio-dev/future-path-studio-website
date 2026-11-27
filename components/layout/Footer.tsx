@@ -5,7 +5,7 @@ import { publicNavigation } from "./navigation";
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-white [--fps-focus-color:var(--fps-color-brand-accent)]">
-      <div className="mx-auto grid max-w-[1440px] gap-2.5 px-5 py-7 min-[900px]:min-h-[250px] min-[900px]:grid-cols-[380fr_520fr_256fr] min-[900px]:gap-[min(4.861vw,70px)] min-[900px]:px-[5%] min-[900px]:py-[58px] min-[1440px]:px-[72px]">
+      <div className="mx-auto grid max-w-[1440px] gap-2.5 px-5 py-7 min-[900px]:grid-cols-[380fr_520fr_256fr] min-[900px]:gap-[min(4.861vw,70px)] min-[900px]:px-[5%] min-[900px]:py-10 min-[1440px]:px-[72px]">
         <div className="flex flex-col items-start gap-2.5 min-[900px]:h-[52px] min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-3">
           <BrandMark className="size-8 min-[900px]:size-12" />
           <p className="text-[11px]/[normal] font-bold uppercase min-[900px]:text-[13px]/[18px]">
